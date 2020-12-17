@@ -14,7 +14,7 @@ import org.jsoup.nodes.Document;
 
 public class WikiAPIVolsh {
 
-    //Create the Scanner Object that we need
+
     private static final Scanner scanner = new Scanner(System.in);
     private static final String encoding = "UTF-8";
 
@@ -24,7 +24,7 @@ public class WikiAPIVolsh {
 
         boolean exit = false;
 
-        //Run until exit =true
+
         while (!exit) {
 
             try {
