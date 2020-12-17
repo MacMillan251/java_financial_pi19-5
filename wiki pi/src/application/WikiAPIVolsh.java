@@ -1,11 +1,10 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,14 +37,14 @@ public class WikiAPIVolsh {
                 System.out.println("Поиск...");
 
 
-                String wikipediaApiJSON = "https://www.wikipedia.org/w/api.php?format=json&action=opensearch&prop=extracts&exintro=&explaintext=&search="
+                String wikipediaApi = "https://www.wikipedia.org/w/api.php?format=json&action=opensearch&prop=extracts&exintro=&explaintext=&search="
                         + searchText;
 
 
-                System.out.println(wikipediaApiJSON);
+                System.out.println(wikipediaApi);
 
 
-                HttpURLConnection wikihttp = (HttpURLConnection) new URL(wikipediaApiJSON).openConnection();
+                HttpURLConnection wikihttp = (HttpURLConnection) new URL(wikipediaApi).openConnection();
                 wikihttp.addRequestProperty("User-Agent", "Mozilla/5.0");
                 BufferedReader in = new BufferedReader(new InputStreamReader(wikihttp.getInputStream()));
 
@@ -53,7 +52,6 @@ public class WikiAPIVolsh {
                 String response = in.lines().collect(Collectors.joining());
                 in.close();
                 //ArrayList<String> result = new ArrayList<String>(Arrays.asList(response.split(",")[0]));
-                //System.out.println(response);
                 //ArrayList<String> result = new ArrayList<String>(Arrays.asList(response.split("extract\":\"")[0]));
                 //System.out.println(result);
                 System.out.println(response);
