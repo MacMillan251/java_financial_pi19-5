@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -37,7 +38,6 @@ public class WikiAPIVolsh {
                 System.out.println("Поиск...");
 
 
-
                 String wikipediaApiJSON = "https://www.wikipedia.org/w/api.php?format=json&action=opensearch&prop=extracts&exintro=&explaintext=&search="
                         + searchText;
 
@@ -52,11 +52,11 @@ public class WikiAPIVolsh {
 
                 String response = in.lines().collect(Collectors.joining());
                 in.close();
-                ArrayList<String> result = new ArrayList<String>(Arrays.asList(response.split(",")[0]));
+                //ArrayList<String> result = new ArrayList<String>(Arrays.asList(response.split(",")[0]));
                 //System.out.println(response);
                 //ArrayList<String> result = new ArrayList<String>(Arrays.asList(response.split("extract\":\"")[0]));
                 //System.out.println(result);
-                System.out.println(result.get(0));
+                System.out.println(response);
 
 
             } catch (Exception ex) {
